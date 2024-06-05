@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Foot from "./components/Foot";
+import { Routes,Route } from "react-router-dom";
+import Login from "./components/Login";
+import Home from "./components/Home";
+import Signup from "./components/Signup";
+import Cart from "./components/Cart";
+import { useState } from "react";
 
 function App() {
+  let [prod,setProd] = useState([]);
+  let [showCart,setShowCart] = useState(false);
+  let [category,setCategory] = useState([]);
+
+  function funaddCart(products){
+    setProd((arr)=>[...arr,products])
+  }
+
+  function toggleCart(){
+    setShowCart((flag)=>!flag)
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header cartItemCount={prod.length} toggleCart={toggleCart} category={category}/>
+    <Home funaddCart={funaddCart} setCategory={setCategory} category={category}/>
+    {
+     showCart && <Cart data={prod}/>
+    }
+    <Foot/>
+    <Routes>
+      <Route path="/login" Component={Login}> </Route>
+      <Route path="/signup" Component={Signup}> </Route>
+    </Routes>
+    </>
   );
 }
 

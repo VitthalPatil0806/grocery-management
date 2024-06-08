@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/grocery-management/static/css/main.cb929a26.css",
+    "main.js": "/grocery-management/static/js/main.583e755a.js",
+    "static/js/453.707f584e.chunk.js": "/grocery-management/static/js/453.707f584e.chunk.js",
+    "index.html": "/grocery-management/index.html",
+    "main.cb929a26.css.map": "/grocery-management/static/css/main.cb929a26.css.map",
+    "main.583e755a.js.map": "/grocery-management/static/js/main.583e755a.js.map",
+    "453.707f584e.chunk.js.map": "/grocery-management/static/js/453.707f584e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb929a26.css",
+    "static/js/main.583e755a.js"
+  ]
+}
